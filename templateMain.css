@@ -1,0 +1,37 @@
+
+.card {
+align-content: center;
+margin-right: 100px;
+margin-left: 100px;
+}
+
+fieldset {
+align-content: center;
+margin-top: 50px;
+margin-right: 50px;
+margin-left: 50px;
+margin-bottom: 50px;
+}
+
+header {
+  margin-bottom:35px;
+}
+
+#footer {
+  align-content: center;
+  text-align: center;
+  width: 18%;
+  margin: 0 auto;
+
+#buttn {
+    align-content: center;
+    
+  }
+
+}
+
+.jumbotron {
+  align-content: center;
+  margin-right: 40px;
+  margin-left: 40px;
+}
