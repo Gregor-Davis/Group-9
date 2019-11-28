@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>group 9 mapping api</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+<style>
+  body { margin: 0; padding: 0; }
+  #map { position: absolute; top: 0; bottom: 0; width: 100%; };
+</style>
+</head>
+<body>
+
+<style>
+  #menu {
+  position: absolute;
+  background: #D7D9D6;
+  border: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+  }
+
+
+</style>
+
+<div id='map'></div>
+<div id='menu'>
+<input id='streets-v11' type='radio' name='rtoggle' value='streets' checked='checked'>
+<label for='streets'>streets</label>
+<input id='light-v10' type='radio' name='rtoggle' value='light'>
+<label for='light'>light</label>
+<input id='dark-v10' type='radio' name='rtoggle' value='dark'>
+<label for='dark'>dark</label>
+<input id='outdoors-v11' type='radio' name='rtoggle' value='outdoors'>
+<label for='outdoors'>outdoors</label>
+<input id='satellite-v9' type='radio' name='rtoggle' value='satellite'>
+<label for='satellite'>satellite</label>
+</div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGpkb3JyZW4iLCJhIjoiY2szNG04dG9xMDNpajNjbXY0OHRzZG82YyJ9.HTb7FIReMe7H69y9gUi_gw';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    zoom: 13,
+    center: [-2.991975, 56.455827]
+
+  });
+  map.on('load', function() {
+
+    var marker = new mapboxgl.Marker()
+    .setLngLat([-2.991975, 56.455827]) //the little green larder location Marker
+    .addTo(map);
+    map.addLayer({
+
+  "id": "places",
+  "type": "symbol",
+  "source": {
+  "type": "geojson",
+  "data": {
+  "type": "FeatureCollection",
+  "features": [{
+  "type": "Feature",
+  "properties": {
+  "description": "<strong>The Little Green Larder</strong><p>272 Perth Rd, Dundee DD2 1AE. Dundee's first zero wast store. open Monday to friday 10:00-6:00 p.m.</p>",
+  "icon": "theatre"
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [-2.991975, 56.455827]
+  }
+  }, {
+  "type": "Feature",
+  "properties": {
+  "description": "<strong>Comunity Fridge</strong><p>Miller's Wynd Car Park, DD1 4HY. The fridge is open Monday to Friday 11am-8pm and Weekends 11am-4pm</p>",
+  "icon": "theatre"
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [-2.987698, 56.456148]
+  }
+  }, {
+  "type": "Feature",
+  "properties": {
+  "description": "<strong>Tilted Duck</strong><p>Unit 5, Angus Works, Fairbairn St, Dundee DD3 7JZ. An online up-cycled furniture and antique store</p>",
+  "icon": "bar"
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [-2.970237, 56.473438]
+  }
+  }, ]
+  }
+  },
+  "layout": {
+  "icon-image": "{icon}-15",
+  "icon-allow-overlap": true
+  }
+  });
+
+  // Create a popup, but don't add it to the map yet.
+  var popup = new mapboxgl.Popup({
+  closeButton: false,
+  closeOnClick: false
+  });
+
+  map.on('mouseenter', 'places', function(e) {
+  // Change the cursor style as a UI indicator.
+  map.getCanvas().style.cursor = 'pointer';
+
+  var coordinates = e.features[0].geometry.coordinates.slice();
+  var description = e.features[0].properties.description;
+
+  // Ensure that if the map is zoomed out such that multiple
+  // copies of the feature are visible, the popup appears
+  // over the copy being pointed to.
+  while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+  coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+  }
+
+  // Populate the popup and set its coordinates
+  // based on the feature found.
+  popup.setLngLat(coordinates)
+  .setHTML(description)
+  .addTo(map);
+  });
+
+  map.on('mouseleave', 'places', function() {
+  map.getCanvas().style.cursor = '';
+  popup.remove();
+  });
+  });
+
+
+  var marker1 = new mapboxgl.Marker()
+  .setLngLat([-2.987698, 56.456148]) // comunity fridge location Marker
+  .addTo(map);
+
+  var marker2 = new mapboxgl.Marker()
+  .setLngLat([-2.970237, 56.473438]) //tilted duck locatoin
+  .addTo(map);
+
+
+  var layerList = document.getElementById('menu');
+  var inputs = layerList.getElementsByTagName('input');
+
+  function switchLayer(layer) {
+    var layerId = layer.target.id;
+    map.setStyle('mapbox://styles/mapbox/' + layerId);
+  }
+
+  for (var i = 0; i < inputs.length; i++) {
+      inputs[i].onclick = switchLayer;
+    }
+</script>
+
+</body>
+</html>
