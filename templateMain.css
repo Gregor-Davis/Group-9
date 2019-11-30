@@ -75,20 +75,26 @@ h1 {
   text-decoration: none;
 }
 
-/* Add a hover effect if you want */
+
 .fa:hover {
   opacity: 0.7;
 }
 
-/* Set a specific color for each brand */
 
-/* Facebook */
+
+
 .fa-facebook {
   color: #81CEA2
 
 }
 
-/* Twitter */
+
 .fa-instagram {
   color: #81CEA2
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }

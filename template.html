@@ -30,7 +30,7 @@
   <a class="navbar-brand" ><mark class= "green">The Little Green Larder</mark></a>
 
 
-  <div class="collapse navbar-collapse" id="navbarColor02">
+  <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
@@ -70,7 +70,7 @@
   <hr class="my-4">
   <p>We offer Fresh food, dried foods, whole foods plastic free for you to fill into your own container, and  we also do zero waste swaps for every day items. We are also known to host workshops teaching eco-friendly methods.</p>
   <p>We have been noted by publications such as The Guardian, The Evening Telegraph and The Courier.</p>
-  <p>Find us on:</p>
+
 
 </div>
 
@@ -129,3 +129,23 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 </script>
+
+<script>
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+  </script>
