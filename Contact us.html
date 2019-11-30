@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+
+    <meta charset="utf-8">
+
+<!-- Bootswatch Solar CSS theme CDN -->
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-8nq3OiMMgrVFAHyRMMO+DTfMEciSY+c3Awhj/5ljQ1xck1Uv2BUtMjsjLD8GT5Er" crossorigin="anonymous">
+<link rel="stylesheet" href="templateMain.css">
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; bottom: 0; right: 0; width: 20%; height: 20%; };
+</style>
+  <title>Little Green Larder</title>
+
+  </head>
+
+<body>
+    <style>
+    #fly1 {
+    display: block;
+    position: relative;
+    margin: 0px auto;
+    width: 0%;
+    height: 0px;
+    padding: 0px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    }
+    </style>
+<header>
+
+<img src="icon.jpg" alt="icon" id="logo">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="healthyLifestyle">Lead a healthy lifestyle</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Recipes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Shops</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</header>
+
+<div class="jumbotron">
+  <h1 class="display-3">Contact The Little Green Larder!</h1>
+  <p class="lead">  </p>
+  <p>The Little Green Larder offers a plastic free shopping experience, with zero waste alternatives to inspire us to create a greener future. There are a variety of ways to get in contact with them!</p>
+  <p></p>
+
+<button class = "button" onclick="visitPage();">Visit the Facebook page!</button>
+<button class = "button" onclick="visitPage2();">Visit the blog!</button>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+<script>
+  function visitPage(){
+      window.location='https://www.facebook.com/thelittlegreenlarder/';
+    }
+  function visitPage2(){
+      window.location='http://thelittlegreenblogger.com/';
+  }
+</script>
+<style>
+  .button{
+    background:url('assets/Facebook.jpg');
+  }
+</style>
+
+<form>
+  <fieldset>
+    <legend>Feedback / Query form</legend>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleSelect1">How would you rate our service?</label>
+      <select class="form-control" id="exampleSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleTextarea">Your message</label>
+      <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputFile">Select optional file related to query</label>
+      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+      <small id="fileHelp" class="form-text text-muted"> Max filesize 25MB </small>
+    </div>
+    <fieldset class="form-group">
+      <legend>Select the type of query</legend>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+          Product related query
+        </label>
+      </div>
+      <div class="form-check">
+      <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+          Customer complaint
+        </label>
+      </div>
+      <div class="form-check disabled">
+      <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
+          Anything else
+        </label>
+      </div>
+    </fieldset>
+    </br>
+    <button type="submit" class="btn btn-primary" id="buttn" >Submit</button>
+  </fieldset>
+</form>
+<div id='map'></div>
+<br/>
+<button id='fly1'></button>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGpkb3JyZW4iLCJhIjoiY2szNG04dG9xMDNpajNjbXY0OHRzZG82YyJ9.HTb7FIReMe7H69y9gUi_gw';
+var start = [-2.991974, 56.455826];
+var end = [-2.991975, 56.455827];
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: start,
+zoom: 13
+});
+
+var isAtStart = true;
+
+document.getElementById('fly1').addEventListener('click', function() {
+// depending on whether we're currently at point a or b, aim for
+// point a or b
+var target = isAtStart ? end : start;
+
+// and now we're at the opposite point
+isAtStart = !isAtStart;
+
+map.flyTo({
+// These options control the ending camera position: centered at
+// the target, at zoom level 18, and north up.
+center: target,
+zoom: 18,
+bearing: 0,
+
+// slowly and zoom out almost completely before starting
+// to pan.
+speed: 0.8, // make the flying fast
+curve: 1, // change the speed at which it zooms out
+
+// This can be any easing function: it takes a number between
+// 0 and 1 and returns another number between 0 and 1.
+easing: function (t) { return t; }
+});
+});
+
+var marker = new mapboxgl.Marker()
+.setLngLat([-2.991975, 56.455827]) //the little green larder location Marker
+.addTo(map);
+
+</script>
+  </body>
+
+
+  <div id="footer">
+  <div>
+    <ul class="pagination pagination-lg">
+      <li class="page-item disabled">
+        <a class="page-link" href="#">&laquo;</a>
+      </li>
+      <li class="page-item active">
+        <a class="page-link" href="#">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">4</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">5</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">&raquo;</a>
+      </li>
+    </ul>
+  </div>
+  </footer>
+
+</html>
