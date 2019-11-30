@@ -14,7 +14,6 @@
   </head>
 
 <body>
-
 <header>
 
 <img src="icon.jpg" alt="icon" id="logo">
@@ -58,6 +57,11 @@
   <h1 class="display-3">Contact Us!</h1>
   <p class="lead">  </p>
   <p>The Bittle Green Larder offers a plastic free shopping experience, with zero waste alternatives to inspire us to create a greener future. There are a variety of ways to get in contact with them!</p>
+  <p></p>
+
+<button class = "button" onclick="visitPage();">Visit the Facebook page!</button>
+<br>
+<button class = "button" onclick="visitPage2();">Visit the blog!</button>
 
   <br>
   <br>
@@ -71,7 +75,14 @@
   <br>
   <br>
 </div>
-
+<script>
+  function visitPage(){
+      window.location='https://www.facebook.com/thelittlegreenlarder/';
+    }
+  function visitPage2(){
+      window.location='http://thelittlegreenblogger.com/';
+  }
+</script>
 <style>
   .button{
     background:url('assets/Facebook.jpg');
