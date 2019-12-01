@@ -6,34 +6,17 @@
     <meta charset="utf-8">
 
 <!-- Bootswatch Solar CSS theme CDN -->
-<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-8nq3OiMMgrVFAHyRMMO+DTfMEciSY+c3Awhj/5ljQ1xck1Uv2BUtMjsjLD8GT5Er" crossorigin="anonymous">
-<link rel="stylesheet" href="templateMain.css">
-<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
-<style>
-body { margin: 0; padding: 0; }
-#map { position: absolute; bottom: 0; right: 0; width: 20%; height: 20%; };
-</style>
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-8nq3OiMMgrVFAHyRMMO+DTfMEciSY+c3Awhj/5ljQ1xck1Uv2BUtMjsjLD8GT5Er" crossorigin="anonymous">
+  <link rel="stylesheet" href="ContactCSS.css">
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
   <title>Little Green Larder</title>
 
   </head>
 
 <body>
-    <style>
-    #fly1 {
-    display: block;
-    position: relative;
-    margin: 0px auto;
-    width: 0%;
-    height: 0px;
-    padding: 0px;
-    border: none;
-    border-radius: 3px;
-    font-size: 12px;
-    text-align: center;
-    }
-    </style>
+
 <header>
 
 <img src="icon.jpg" alt="icon" id="logo">
@@ -77,11 +60,54 @@ body { margin: 0; padding: 0; }
   <h1 class="display-3">Contact The Little Green Larder!</h1>
   <p class="lead">  </p>
   <p>The Little Green Larder offers a plastic free shopping experience, with zero waste alternatives to inspire us to create a greener future. There are a variety of ways to get in contact with them!</p>
-  <p></p>
+  <table>
+    <tr>
+      <th>Day</th>
+      <th>Opening Times</th>
+    </tr>
+    <tr>
+      <td>Monday</td>
+      <td>10:00-18:00</td>
+    </tr>
+    <tr>
+      <td>Tuesday</td>
+      <td>10:00-18:00</td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td>09:00-17:00</td>
+    </tr>
+    <tr>
+      <td>Thursday</td>
+      <td>16:00-19:00</td>
+    </tr>
+    <tr>
+      <td>Friday</td>
+      <td>10:00-18:00</td>
+    </tr>
+    <tr>
+      <td>Saturday</td>
+      <td>09:00-17:00</td>
+    </tr>
+    <tr>
+      <td>Sunday</td>
+      <td>11:00-14:00</td>
+    </tr>
+  </table>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <p> Here are some buttons you can use to visit thier facebook page and blog!</p>
 
-<button class = "button" onclick="visitPage();">Visit the Facebook page!</button>
-<button class = "button" onclick="visitPage2();">Visit the blog!</button>
 
+<a href="https://www.facebook.com/thelittlegreenlarder/">
+<img border="0" alt="W3Schools" src="Assets/Facebook.jpg" width="160" height="100" class="facebook">
+</a>
+<a href="http://thelittlegreenblogger.com/">
+<img border="0" alt="W3Schools" src="Assets/GreenLarder.jpg" width="160" height="100" class="blog">
+</a>
   <br>
   <br>
   <br>
@@ -93,6 +119,7 @@ body { margin: 0; padding: 0; }
   <br>
   <br>
   <br>
+
 </div>
 <script>
   function visitPage(){
@@ -102,12 +129,6 @@ body { margin: 0; padding: 0; }
       window.location='http://thelittlegreenblogger.com/';
   }
 </script>
-<style>
-  .button{
-    background:url('assets/Facebook.jpg');
-  }
-</style>
-
 <form>
   <fieldset>
     <legend>Feedback / Query form</legend>
@@ -160,6 +181,7 @@ body { margin: 0; padding: 0; }
     <button type="submit" class="btn btn-primary" id="buttn" >Submit</button>
   </fieldset>
 </form>
+
 <div id='map'></div>
 <br/>
 <button id='fly1'></button>
@@ -204,10 +226,14 @@ easing: function (t) { return t; }
 
 var marker = new mapboxgl.Marker()
 .setLngLat([-2.991975, 56.455827]) //the little green larder location Marker
+.setPopup(new mapboxgl.Popup({ offset: 20 }) // add popups
+    .setHTML('<p class="mapboxtext"> The Little Green Larder <p>' + '<p class="mapboxtext"> This is the location of The Little Green Larder, 272 Pearth Road, Dundee DD2 1AE </p>'))
 .addTo(map);
 
+
 </script>
-  </body>
+
+</body>
 
 
   <div id="footer">
