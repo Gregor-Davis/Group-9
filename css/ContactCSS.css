@@ -1,0 +1,47 @@
+body {
+  margin: 0; padding: 0;
+ }
+
+#map {
+   position: absolute; bottom: 0; right: 0; width: 20%; height: 20%;
+ };
+
+#fly1 {
+display: block;
+position: relative;
+margin: 0px auto;
+width: 0%;
+height: 0px;
+padding: 0px;
+border: none;
+border-radius: 3px;
+font-size: 12px;
+text-align: center;
+}
+
+
+table {
+border-collapse: collapse;
+}
+
+table, th, td {
+border: 2px solid #007A6B;
+}
+
+.button1{
+  background-color: blue;
+}
+
+.button2{
+  background-color: green;
+}
+.mapboxtext{
+  font-size: 12px;
+}
+.title {
+  font-family: 'Bebas Neue', cursive;
+}
+.logo{
+  margin-left: auto;
+  margin-right: auto;
+}

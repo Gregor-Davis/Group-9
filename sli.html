@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+
+    <meta charset="utf-8">
+
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+
+<!-- Bootswatch Solar CSS theme CDN -->
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-8nq3OiMMgrVFAHyRMMO+DTfMEciSY+c3Awhj/5ljQ1xck1Uv2BUtMjsjLD8GT5Er" crossorigin="anonymous">
+
+<link rel="stylesheet" href="css/templateMain.css">
+
+    <title>Little Green Larder</title>
+
+  </head>
+
+  <body>
+
+<header>
+
+<img src="Assets/icon.jpg" alt="icon" id="logo">
+
+<nav style="font-size:120%;" class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a style="font-size:120%;" class="navbar-brand"><mark class= "green">The Little Green Larder</mark></a>
+
+
+<div class="collapse navbar-collapse" id="navbarColor02">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="HomePage.html">Home<span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="sli.html">About</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="recipes.html">Recipes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="ContactUs.html">Contact</a>
+    </li>
+  </ul>
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div>
+</nav>
+</header>
+
+<div class="jumbotron">
+  <h1 class="display-3">Information on living a sustainable life in Dundee</h1>
+  <p class="lead">This page is dedicated to providing informating to the citizens of Dundee about the many available methods for helping our planet. They can help our planet by living a happy, healthy and sustainable life. It doesent have to be difficult, just a little bit of effort can go a long way making the small changes we recommend.</p>
+  <hr class="my-4">
+  <p>Each household produces 1 tonne of waste, most of which ends up in landfill or incinerated in Scotland. Not only is this a waste of resources and materials, but it contributes to climate change and pollution and is a huge cost to the economy. The Council currently recycles 40% of household waste and with new city-wide standards for waste and recycling collections this figure is set to rise.
+
+The Climate Action Plan addresses how waste is to be tackled city-wide in Dundee.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="https://www.dundeecity.gov.uk/sustainable-dundee/how-to-live-sustainably-in-dundee" role="button">Learn more</a>
+  </p>
+</div>
+
+<aside class="aa">
+  <div class="card mb-3">
+    <h3 class="card-header">Eating Responsibly</h3>
+    <div class="card-body">
+      <h5 class="card-title">Zero Packaging Shops</h5>
+      <h6 class="card-subtitle text-muted">Little Green Larder</h6>
+    </div>
+    <img style="width: 100%; display: block;" src="Assets/dispenser.jpg">
+    <div class="card-body">
+      <p class="card-text">Across Dundee there are many shops that offer 'zero packaging' food. This works by allowing customers to bring their own tubs and jars into the shop, products are then weighed and paid for apropriatly. </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">One such of these shops, on Perth Road, is the Little Green Larder. </li>
+      <li class="list-group-item">This is one of many ways you can help cut down the enviromental impact Dundee is having on our planet.</li>
+      <li class="list-group-item"><a href="https://www.facebook.com/pg/thelittlegreenlarder/about/?ref=page_internal"> LGL </a></li>
+    </ul>
+    <div class="card-body">
+
+    </div>
+    <div class="card-footer text-muted">
+      Sustainable Dundee Map:
+    </div>
+  </div>
+   <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Dundee Renewability Map</h4>
+      <h6 class="card-subtitle mb-2 text-muted">Map</h6>
+      <!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>group 9 mapping api</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+<style>
+  body { margin: 0; padding: 0; }
+  #map { position: absolute; top: 0; bottom: 0; width: 100%; height: 500%; };
+</style>
+</head>
+<body>
+
+<style>
+  #menu {
+  position: absolute;
+  background: #D7D9D6;
+  border: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+  }
+
+
+</style>
+
+<div id='map'></div>
+<div id='menu'>
+<input id='streets-v11' type='radio' name='rtoggle' value='streets' checked='checked'>
+<label for='streets'>streets</label>
+<input id='light-v10' type='radio' name='rtoggle' value='light'>
+<label for='light'>light</label>
+<input id='dark-v10' type='radio' name='rtoggle' value='dark'>
+<label for='dark'>dark</label>
+<input id='outdoors-v11' type='radio' name='rtoggle' value='outdoors'>
+<label for='outdoors'>outdoors</label>
+<input id='satellite-v9' type='radio' name='rtoggle' value='satellite'>
+<label for='satellite'>satellite</label>
+</div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGpkb3JyZW4iLCJhIjoiY2szNG04dG9xMDNpajNjbXY0OHRzZG82YyJ9.HTb7FIReMe7H69y9gUi_gw';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    zoom: 13,
+    center: [-2.991975, 56.455827]
+
+  });
+  map.on('load', function() {
+
+    var marker = new mapboxgl.Marker()
+    .setLngLat([-2.991975, 56.455827]) //the little green larder location Marker
+    .addTo(map);
+    map.addLayer({
+
+  "id": "places",
+  "type": "symbol",
+  "source": {
+  "type": "geojson",
+  "data": {
+  "type": "FeatureCollection",
+  "features": [{
+  "type": "Feature",
+  "properties": {
+  "description": "<strong>The Little Green Larder</strong><p>272 Perth Rd, Dundee DD2 1AE. Dundee's first zero wast store. open Monday to friday 10:00-6:00 p.m.</p>",
+  "icon": "theatre"
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [-2.991975, 56.455827]
+  }
+  }, {
+  "type": "Feature",
+  "properties": {
+  "description": "<strong>Comunity Fridge</strong><p>Miller's Wynd Car Park, DD1 4HY. The fridge is open Monday to Friday 11am-8pm and Weekends 11am-4pm</p>",
+  "icon": "theatre"
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [-2.987698, 56.456148]
+  }
+  }, {
+  "type": "Feature",
+  "properties": {
+  "description": "<strong>Tilted Duck</strong><p>Unit 5, Angus Works, Fairbairn St, Dundee DD3 7JZ. An online up-cycled furniture and antique store</p>",
+  "icon": "bar"
+  },
+  "geometry": {
+  "type": "Point",
+  "coordinates": [-2.970237, 56.473438]
+  }
+  }, ]
+  }
+  },
+  "layout": {
+  "icon-image": "{icon}-15",
+  "icon-allow-overlap": true
+  }
+  });
+
+  // Create a popup, but don't add it to the map yet.
+  var popup = new mapboxgl.Popup({
+  closeButton: false,
+  closeOnClick: false
+  });
+
+  map.on('mouseenter', 'places', function(e) {
+  // Change the cursor style as a UI indicator.
+  map.getCanvas().style.cursor = 'pointer';
+
+  var coordinates = e.features[0].geometry.coordinates.slice();
+  var description = e.features[0].properties.description;
+
+  // Ensure that if the map is zoomed out such that multiple
+  // copies of the feature are visible, the popup appears
+  // over the copy being pointed to.
+  while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+  coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+  }
+
+  // Populate the popup and set its coordinates
+  // based on the feature found.
+  popup.setLngLat(coordinates)
+  .setHTML(description)
+  .addTo(map);
+  });
+
+  map.on('mouseleave', 'places', function() {
+  map.getCanvas().style.cursor = '';
+  popup.remove();
+  });
+  });
+
+
+  var marker1 = new mapboxgl.Marker()
+  .setLngLat([-2.987698, 56.456148]) // comunity fridge location Marker
+  .addTo(map);
+
+  var marker2 = new mapboxgl.Marker()
+  .setLngLat([-2.970237, 56.473438]) //tilted duck locatoin
+  .addTo(map);
+
+
+  var layerList = document.getElementById('menu');
+  var inputs = layerList.getElementsByTagName('input');
+
+  function switchLayer(layer) {
+    var layerId = layer.target.id;
+    map.setStyle('mapbox://styles/mapbox/' + layerId);
+  }
+
+  for (var i = 0; i < inputs.length; i++) {
+      inputs[i].onclick = switchLayer;
+    }
+</script>
+
+</body>
+</html>
+
+
+    </div>
+  </div>
+
+  </div>
+</aside>
+
+<!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+
+
+  </body>
+
+
+
+  </footer>
+
+</html>
