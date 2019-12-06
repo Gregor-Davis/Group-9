@@ -26,7 +26,7 @@ header {
 
 #buttn {
     align-content: center;
-    
+
   }
 
 }
@@ -35,4 +35,13 @@ header {
   align-content: center;
   margin-right: 40px;
   margin-left: 40px;
+}
+
+mark.green {
+    color:#81CEA2;
+    background: none;
+}
+
+h1 {
+  color: #81CEA2;
 }
