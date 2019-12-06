@@ -17,7 +17,7 @@ header {
   margin-bottom:35px;
 }
 
-#footer {
+footer {
   align-content: center;
   text-align: center;
   width: 18%;
@@ -44,4 +44,49 @@ mark.green {
 
 h1 {
   color: #81CEA2;
+}
+
+
+#myBtn {
+
+  bottom: 20%;
+  right: 30%;
+
+
+  background-color: #81CEA2;
+  color: white;
+
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+
+
+
+.fa-facebook {
+  color: #81CEA2
+
+}
+
+
+.fa-instagram {
+  color: #81CEA2
 }
