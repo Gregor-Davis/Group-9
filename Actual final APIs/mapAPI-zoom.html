@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>Slowly fly to a location</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; };
+</style>
+</head>
+<body>
+<style>
+#fly1 {
+display: block;
+position: relative;
+margin: 0px auto;
+width: 8%;
+height: 32px;
+padding: 10px;
+border: none;
+border-radius: 3px;
+font-size: 12px;
+text-align: center;
+color: #000000;
+background: #77D934;
+}
+</style>
+<div id='map'></div>
+<br/>
+<button id='fly1'>The Little Green Larder</button>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGpkb3JyZW4iLCJhIjoiY2szNG04dG9xMDNpajNjbXY0OHRzZG82YyJ9.HTb7FIReMe7H69y9gUi_gw';
+var start = [-2.991974, 56.455826];
+var end = [-2.991975, 56.455827];
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: start,
+zoom: 13
+});
+
+var isAtStart = true;
+
+document.getElementById('fly1').addEventListener('click', function() {
+// depending on whether we're currently at point a or b, aim for
+// point a or b
+var target = isAtStart ? end : start;
+
+// and now we're at the opposite point
+isAtStart = !isAtStart;
+
+map.flyTo({
+// These options control the ending camera position: centered at
+// the target, at zoom level 18, and north up.
+center: target,
+zoom: 18,
+bearing: 0,
+
+// slowly and zoom out almost completely before starting
+// to pan.
+speed: 0.8, // make the flying fast
+curve: 1, // change the speed at which it zooms out
+
+// This can be any easing function: it takes a number between
+// 0 and 1 and returns another number between 0 and 1.
+easing: function (t) { return t; }
+});
+});
+
+var marker = new mapboxgl.Marker()
+.setLngLat([-2.991975, 56.455827]) //the little green larder location Marker
+.addTo(map);
+
+</script>
+
+</body>
+</html>
